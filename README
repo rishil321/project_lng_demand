@@ -1,0 +1,3 @@
+For security reasons, we don't have the database exposed on port 5432 on the public IP.
+To connect to the database for testing, run this command to setup an ssh tunnel:
+ssh -p 2222 -N -L 5432:localhost:5432 rishi-latchmepersad@107.172.211.57
