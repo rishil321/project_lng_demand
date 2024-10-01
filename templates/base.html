@@ -1,0 +1,54 @@
+{% load django_bootstrap5 %}
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {% block title %}
+        SimpleLNG
+      {% endblock %}
+    </title>
+    <link rel="icon" type="image/x-icon" href="{% static 'images/lng_icon.ico' %}" />
+    {% block meta %}
+      <meta name="theme-color" content="#333333" />
+      <meta name="msapplication-TileColor" content="#2b5797" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+      <meta name="apple-mobile-web-app-title" content="{{ site.name }}" />
+      <meta property="og:type" content="website" />
+    {% endblock %}
+    <script src="https://unpkg.com/htmx.org@2.0.2"></script>
+  </head>
+  <body>
+    {% block header %}
+
+    {% endblock %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img style="height:50;width=50;" src="{% static 'images/lng_icon.png' %}" title="LNG Cargo Ship, sourced from Freepik@Flaticons.com" />&nbsp SimpleLNG</a>
+        <div class="vr"></div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    {% block body %}
+
+    {% endblock %}
+    {% block footer %}
+
+    {% endblock %}
+  </body>
+</html>
